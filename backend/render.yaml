@@ -12,11 +12,34 @@ services:
         value: production
       - key: APP_DEBUG
         value: "false"
-      - key: APP_URL
-        sync: false
       - key: DB_CONNECTION
-        value: sqlite
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: phoneshop-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: phoneshop-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: phoneshop-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: phoneshop-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: phoneshop-db
+          property: password
       - key: SESSION_DRIVER
         value: file
       - key: CACHE_DRIVER
         value: file
+
+databases:
+  - name: phoneshop-db
+    plan: free
+    databaseName: phoneshop
