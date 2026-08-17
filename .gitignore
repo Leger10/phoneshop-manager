@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# React Native
+*.hprof
+
+# Laravel
+backend/storage/logs/*.log
+backend/bootstrap/cache/
+
+# Android/iOS build artifacts
+PhoneShopMobile/android/app/build/
+PhoneShopMobile/ios/build/
+PhoneShopMobile/ios/Pods/
